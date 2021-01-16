@@ -1,0 +1,9 @@
+version: '3'
+services:
+ minecraft:
+  build: .
+  ports:
+    - "25565:25565"
+  command: java -Xmx4G -Xms1G -Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider -jar server.jar nogui
+  volumes:
+    - "~/tmp/minecraft_data:/minecraft/world"
